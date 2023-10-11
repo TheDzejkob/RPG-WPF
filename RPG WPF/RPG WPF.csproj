@@ -9,7 +9,29 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Grafika\" />
+    <None Remove="Grafika\Adventure Outline.ttf" />
+    <None Remove="Grafika\Adventure.ttf" />
+    <None Remove="Grafika\data-latin.ttf" />
+    <None Remove="Grafika\data-unifon.ttf" />
+    <None Remove="Grafika\KarmaFuture.ttf" />
+    <None Remove="Grafika\Nightmare Codehack.otf" />
+    <None Remove="Grafika\Semi-Coder-Regular.otf" />
+    <None Remove="Grafika\unlearn2.ttf" />
+    <None Remove="Grafika\unlearne.ttf" />
+    <None Remove="Grafika\VCR_OSD_MONO.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Grafika\Adventure Outline.ttf" />
+    <Resource Include="Grafika\Adventure.ttf" />
+    <Resource Include="Grafika\data-latin.ttf" />
+    <Resource Include="Grafika\data-unifon.ttf" />
+    <Resource Include="Grafika\KarmaFuture.ttf" />
+    <Resource Include="Grafika\Nightmare Codehack.otf" />
+    <Resource Include="Grafika\Semi-Coder-Regular.otf" />
+    <Resource Include="Grafika\unlearn2.ttf" />
+    <Resource Include="Grafika\unlearne.ttf" />
+    <Resource Include="Grafika\VCR_OSD_MONO.ttf" />
   </ItemGroup>
 
 </Project>
