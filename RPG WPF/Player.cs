@@ -12,12 +12,15 @@ namespace RPG_WPF
         public int Hp { get; set; }
         public int Dmg { get; set; }
         public int Stepcounter { get; set; }
+        public Classa PlayerClassa { get; set; }
 
-        public Player(string name, int hp, int dmg, int stepcounter ) {
+        public Player(string name, int hp, int dmg, int stepcounter , Classa classa) {
             Name = name;
             Hp = hp;
             Dmg = dmg;
             Stepcounter = stepcounter;
+            PlayerClassa = classa;
+            
         
         }
     }
