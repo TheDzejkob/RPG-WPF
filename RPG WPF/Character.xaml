@@ -5,8 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPG_WPF"
         mc:Ignorable="d"
-        Title="Character" Height="450" Width="800">
+        Title="Character" Height="450" Width="800" Background="#B0D7FF">
+    <Window.Resources>
+        <FontFamily x:Key="test" >/Grafika/#Karma Future</FontFamily>
+    </Window.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="93*"/>
+            <RowDefinition Height="93*"/>
+            <RowDefinition Height="103*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="33*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" FontSize="20"  FontFamily="{StaticResource test}"  HorizontalContentAlignment="Center">Character creator
+        </Label>
         
+        <Button Grid.Row="4" Grid.Column="1" Margin="100,10,100,10" Background="#2D3142" Foreground="White">Vytvořit postavu
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Grid.Column="1" Grid.Row="1" Margin="10,1,10,60" HorizontalContentAlignment="Center">Jméno pro tvou postavu:</Label>
+        <TextBox Grid.Column="1" Grid.Row="1" Margin="100,30,100,15" Background="#EAE8FF">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Label Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Center" Margin="0,15,0,0">Vyber si Classu:</Label>
+        <ListBox Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Margin="0,45,0,5" Background="#EAE8FF" HorizontalContentAlignment="Center" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </ListBox.Resources>
+        </ListBox>
+
     </Grid>
 </Window>
