@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "Barbarian",
+    "Description": "Barbar pohanského původu",
+    "Basehp": 10,
+    "Basedmg": 3
+  },
+  {
+    "Name": "Magič",
+    "Description":  "Magus Vagus co ja vim"
+    "Basehp": 
+
+  }
+]

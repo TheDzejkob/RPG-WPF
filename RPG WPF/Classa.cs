@@ -12,5 +12,6 @@ namespace RPG_WPF
         public string Description { get; set; }
         public int Basehp { get; set; }
         public int Basedmg { get; set; }
+        public int Basesh { get; set; }
     }
 }
