@@ -23,28 +23,30 @@ namespace RPG_WPF
     public partial class Character : Window
     {
         string jsonFilePath = "C:\\Users\\PCnetz\\Desktop\\RPG WPF\\RPG WPF\\Classy.json";
+        
 
         public Character()
         {
             InitializeComponent();
             
 
-                // Read the JSON data from the file
-                string jsonContent = File.ReadAllText(jsonFilePath);
 
-                // Deserialize the JSON data into a List of Classa objects
+        // 4te z Jsonu classy
+        string jsonContent = File.ReadAllText(jsonFilePath);
+
+                // prečita veci z jasonu a predelava je zpet na objekty
                 List<Classa> classaList = JsonSerializer.Deserialize<List<Classa>>(jsonContent);
                 listboxx.ItemsSource = classaList;
                 
-                // Now you have a List of Classa objects
-                foreach (var item in classaList)
-                {
-                    Console.WriteLine($"Name: {item.Name}");
-                    Console.WriteLine($"Description: {item.Description}");
-                    Console.WriteLine($"Basehp: {item.Basehp}");
-                    Console.WriteLine($"Basedmg: {item.Basedmg}");
-                    Console.WriteLine(); // Add a line break for separation
-                }
+                
+                //foreach (var item in classaList)
+                //{
+                //    Console.WriteLine($"Name: {item.Name}");
+                //    Console.WriteLine($"Description: {item.Description}");
+                //    Console.WriteLine($"Basehp: {item.Basehp}");
+                //    Console.WriteLine($"Basedmg: {item.Basedmg}");
+                //    Console.WriteLine(); // Add a line break for separation
+                //}
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -53,6 +55,16 @@ namespace RPG_WPF
             {
                 alert alertWin = new alert();
                 alertWin.ShowDialog();
+            }
+            else
+            {
+                Classa selectedClassa = listboxx.SelectedItem as Classa;
+
+
+                App.Hrac = new Player(menoTextBox.Text, selectedClassa.Basehp, selectedClassa.Basedmg, 0, selectedClassa);
+                Hra hraWindow = new Hra();
+                hraWindow.Show();
+                Close();
             }
         }
     }

@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 
 namespace RPG_WPF
 {
-    internal class Classa
+    public class Classa
     {
         public string Name { get; set; }
         public string Description { get; set; }
         public int Basehp { get; set; }
         public int Basedmg { get; set; }
-        public int Basesh { get; set; }
+        public Classa(string name, string description, int basehp, int basedmg)
+        {
+            Name = name;
+            Description = description;
+            Basehp = basehp;
+            Basedmg = basedmg;
+        }
     }
 }
