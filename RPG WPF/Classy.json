@@ -7,8 +7,9 @@
   },
   {
     "Name": "Magič",
-    "Description":  "Magus Vagus co ja vim"
-    "Basehp": 
+    "Description":  "Magus Vagus co ja vim",
+    "Basehp": 10,
+    "Basedmg": 2
 
   }
 ]
