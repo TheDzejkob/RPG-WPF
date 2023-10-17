@@ -11,5 +11,23 @@
     "Basehp": 10,
     "Basedmg": 2
 
+  },
+  {
+    "Name": "arčr",
+    "Description": "střílí šípy nebo něco takovyho idk",
+    "Basehp": 10,
+    "Basedmg": 4
+  },
+  {
+    "Name": "pírát",
+    "Description":"JARRRRR PLATINUM",
+    "Basehp": 10,
+    "Basedmg": 2
+  },
+  {
+    "Name": "thíf",
+    "Description": "prostě zloděj lol",
+    "Basehp": 10,
+    "Basedmg": 2
   }
 ]
