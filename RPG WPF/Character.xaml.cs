@@ -31,7 +31,7 @@ namespace RPG_WPF
             
 
 
-        // 4te z Jsonu classy
+        // čte z Jsonu classy
         string jsonContent = File.ReadAllText(jsonFilePath);
 
                 // prečita veci z jasonu a predelava je zpet na objekty
