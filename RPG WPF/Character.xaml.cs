@@ -22,7 +22,7 @@ namespace RPG_WPF
     /// </summary>
     public partial class Character : Window
     {
-        string jsonFilePath = "C:\\Users\\PCnetz\\Desktop\\RPG WPF\\RPG WPF\\Classy.json";
+        string jsonFilePath = @"C:\Users\PCnetz\Desktop\RPG WPF\RPG WPF\Json\Classy.json";
         
 
         public Character()
@@ -54,7 +54,7 @@ namespace RPG_WPF
             if (string.IsNullOrEmpty(menoTextBox.Text)|| listboxx.SelectedIndex == -1) 
             {
                 alert alertWin = new alert();
-                alertWin.ShowDialog();
+                alertWin.ShowDialog(); 
             }
             else
             {

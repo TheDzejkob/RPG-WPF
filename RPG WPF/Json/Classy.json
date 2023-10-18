@@ -1,6 +1,6 @@
 [
   {
-    "Name": "Barbarian",
+    "Name": "Bárbarian",
     "Description": "Barbar pohanského původu",
     "Basehp": 10,
     "Basedmg": 3
@@ -26,7 +26,7 @@
   },
   {
     "Name": "Thíf",
-    "Description": "prostě zloděj lol",
+    "Description": "prostě zloděj lol (cigoš)",
     "Basehp": 10,
     "Basedmg": 2
   }

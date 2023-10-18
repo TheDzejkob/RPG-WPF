@@ -34,6 +34,8 @@ namespace RPG_WPF
         {
             InitializeComponent();
 
+
+
         }
     }
 }
