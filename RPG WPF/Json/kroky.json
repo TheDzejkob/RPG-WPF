@@ -1,3 +1,19 @@
-{
+[
+  {
+    "Text": "Nic se nestalo",
+    "Dmg": 0,
+    "Heal": 0
+  },
+  {
+    "Text": "našel jsi lektvar a bezmyšlenkovitě jsi se ho rozhodl vypít.Měl jsi štěstí a byl to heal poťák",
+    "Dmg": 0,
+    "Heal": 2
+  },
+  {
+    "Text": "našel jsi lektvar a bezmyšlenkovitě jsi se ho rozhodl vypít.Měl jsi smůlu byl to jed",
+    "Dmg": 1,
+    "Heal": 0
+  }
 
-}
+
+]

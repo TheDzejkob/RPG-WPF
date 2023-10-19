@@ -30,11 +30,42 @@ namespace RPG_WPF
     {
         GameManager gameManager = new GameManager(new List<Classa>());
         
+                private Random random = new Random();
         public Hra()
         {
             InitializeComponent();
+            void krok()
+            {
+                string filepath = @"C:\Users\PCnetz\Desktop\RPG WPF\RPG WPF\Json\kroky.json";
 
+            }
 
+            void fight()
+            {
+
+            }
+
+            void tezba() 
+            {
+            
+            }
+
+            void funcPicker() 
+            {
+                double randomnumber = random.NextDouble();
+                if (randomnumber < 0.7)//70% šanca 
+                {
+                    krok();
+                } 
+                else if (randomnumber < 0.9)//20% šanca pač 0.7 +0.2 kkt 
+                {
+                    fight();
+                }
+                else 
+                {
+                    tezba();
+                }
+            }
 
         }
     }
