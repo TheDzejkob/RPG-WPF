@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace RPG_WPF
 {
-    public class krok
+    public class Krok
     {
-        string Text {  get; set; }
-        int Dmg {  get; set; }
-        int Heal { get; set; }
+        public string Text {  get; set; }
+        public int Dmg {  get; set; }
+        public int Heal { get; set; }
 
-        public krok(string text, int dmg, int heal)
+        public Krok(string text, int dmg, int heal)
         {
         
             Text = text;

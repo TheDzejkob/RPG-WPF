@@ -17,10 +17,46 @@
             <ColumnDefinition Width="77*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="1" Margin="5" Padding="5" BorderThickness="1" Background="#ADACB5" CornerRadius="15">
-            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text=""/>
+            <TextBlock x:Name="TextBoxx" TextAlignment="Center" VerticalAlignment="Center" Text=""/>
         </Border>
 
-        <Button Grid.Column="1" Grid.Row="1" Margin="100,20,100,20" Background="#2D3142" Foreground="White" Content="Udělat krok">
+        <Button x:Name="krokButton" Grid.Column="1" Grid.Row="1" Margin="100,20,100,20" Background="#2D3142" Foreground="White" Content="Udělat krok" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        
+        
+        
+        
+        <Button x:Name="utokButton" Grid.Column="1" Grid.Row="1" Margin="20,35,280,5" Background="#2D3142" Foreground="White" Content="základní útok" Visibility="Collapsed">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="heavyButton" Grid.Column="1" Grid.Row="1" Margin="280,35,20,5" Background="#2D3142" Foreground="White" Content="Heavy útok" Visibility="Collapsed">
+        <Button.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="15"></Setter>
+            </Style>
+        </Button.Resources>
+        </Button>
+
+        <Button x:Name="utekButton" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Margin="40,295,260,80" Background="#2D3142" Foreground="White" Content="Pokusit se o útěk" Visibility="Collapsed">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="abilitaButton" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Margin="260,295,40,80" Background="#2D3142" Foreground="White" Content="Abilita" Visibility="Collapsed">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="15"></Setter>

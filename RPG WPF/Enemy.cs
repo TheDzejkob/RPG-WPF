@@ -8,11 +8,11 @@ namespace RPG_WPF
 {
     public class Enemy
     {
-        string Name { get; set; }
-        int Hp {  get; set; }
-        int Dmg { get; set; }
+        public string Name { get; set; }
+        public int Hp {  get; set; }
+        public int Dmg { get; set; }
 
-        string Description { get; set; }
+        public string Description { get; set; }
 
         public Enemy (string name, int hp, int dmg, string description)
         {
