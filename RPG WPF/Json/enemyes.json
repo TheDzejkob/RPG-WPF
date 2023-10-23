@@ -1,14 +1,14 @@
 [
   {
     "Name": "test enemy 1",
-    "Basehp": 10,
-    "Basedmg": 3,
+    "Hp": 10,
+    "Dmg": 3,
     "Description": "idk placeholder popisek 1"
   },
   {
     "Name": "test enemy 2",
-    "Basehp": 8,
-    "Basedmg": 2,
+    "Hp": 8,
+    "Dmg": 2,
     "Description": "idk placeholder popisek 2"
   }
 ]

@@ -32,7 +32,7 @@
         
         
         
-        <Button x:Name="utokButton" Grid.Column="1" Grid.Row="1" Margin="20,35,280,5" Background="#2D3142" Foreground="White" Content="základní útok" Visibility="Collapsed">
+        <Button x:Name="utokButton" Grid.Column="1" Grid.Row="1" Margin="20,35,280,5" Background="#2D3142" Foreground="White" Content="základní útok" Visibility="Collapsed" Click="utokButton_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="15"></Setter>

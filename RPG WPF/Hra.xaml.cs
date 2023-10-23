@@ -29,6 +29,7 @@ namespace RPG_WPF
     public partial class Hra : Window
     {
         GameManager gameManager = new GameManager(new List<Classa>());
+        Enemy enemy;
 
         private Random random = new Random();
         string filepathkroky = @"C:\Users\PCnetz\Desktop\RPG WPF\RPG WPF\Json\kroky.json";
@@ -60,10 +61,11 @@ namespace RPG_WPF
         {
             List<Enemy> EnemyList = JsonSerializer.Deserialize<List<Enemy>>(prectenienemy);
             int r = random.Next(EnemyList.Count);
-            TextBoxx.Text = "Začal jsi Bojovat s " + EnemyList[r].Name;
+            enemy = EnemyList[r];
             bool boj = true;
             while (boj == true) 
             {
+            TextBoxx.Text = "Začal jsi Bojovat s " + enemy.Name + enemy.Hp;
                 
                 krokButton.Visibility = Visibility.Collapsed;
 
@@ -71,11 +73,19 @@ namespace RPG_WPF
                 heavyButton.Visibility = Visibility.Visible;
                 utekButton.Visibility = Visibility.Visible;
                 abilitaButton.Visibility = Visibility.Visible;
-                break;
+                if (enemy.Hp >= 0) 
+                {
+                    boj = false;
+                }
+               
             }
             // Your fight logic
         }
 
+        private void utokButton_Click(object sender, RoutedEventArgs e)
+        {
+            takeDmg(enemy.Hp, App.Hrac.Dmg);
+        }
 
         void tezba()
         {
