@@ -17,7 +17,7 @@
             <ColumnDefinition Width="77*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="1" Margin="5" Padding="5" BorderThickness="1" Background="#ADACB5" CornerRadius="15">
-            <TextBlock x:Name="TextBoxx" TextAlignment="Center" VerticalAlignment="Center" Text=""/>
+            <TextBlock x:Name="TextBoxx" Margin="20,0,20,0" TextAlignment="Center" VerticalAlignment="Center" Text="" TextWrapping="Wrap"/>
         </Border>
 
         <Button x:Name="krokButton" Grid.Column="1" Grid.Row="1" Margin="100,20,100,20" Background="#2D3142" Foreground="White" Content="Udělat krok" Click="Button_Click">

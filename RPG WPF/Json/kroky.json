@@ -5,12 +5,27 @@
     "Heal": 0
   },
   {
-    "Text": "našel jsi lektvar a bezmyšlenkovitě jsi se ho rozhodl vypít.Měl jsi štěstí a byl to heal poťák",
+    "Text": "Nsuper napinavej text",
+    "Dmg": 0,
+    "Heal": 0
+  },
+  {
+    "Text": "Devlog 1: prave jsou 2 rano v sobotu večer a ja misto toho abych byl venku s nekim tak delam tohle idk co je se mnou spatne",
+    "Dmg": 0,
+    "Heal": 0
+  },
+  {
+    "Text": "nejakej text co ja vim neumim vymislet texty a zaroven proc tohle pisu tak dlouhy? i¨dk aspon otestuju zda se text spravne wrapuje",
+    "Dmg": 0,
+    "Heal": 0
+  },
+  {
+    "Text": "našel jsi lektvar a bezmyšlenkovitě jsi se ho rozhodl vypít.Měl jsi štěstí a byl to heal poťák  Heal za 2",
     "Dmg": 0,
     "Heal": 2
   },
   {
-    "Text": "našel jsi lektvar a bezmyšlenkovitě jsi se ho rozhodl vypít.Měl jsi smůlu byl to jed",
+    "Text": "našel jsi lektvar a bezmyšlenkovitě jsi se ho rozhodl vypít.Měl jsi smůlu byl to jed   poškození za 1",
     "Dmg": 1,
     "Heal": 0
   }
