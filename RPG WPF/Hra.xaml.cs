@@ -32,10 +32,11 @@ namespace RPG_WPF
         Enemy enemy;
 
         private Random random = new Random();
-        string filepathkroky = @"C:\Users\PCnetz\Desktop\RPG WPF\RPG WPF\Json\kroky.json";
-        string filepathenemy = @"C:\Users\PCnetz\Desktop\RPG WPF\RPG WPF\Json\enemyes.json";
+        string filepathkroky = @"C:\Users\Lenovo\Source\Repos\TheDzejkob\RPG-WPF\RPG WPF\Json\kroky.json";
+        string filepathenemy = @"C:\Users\Lenovo\Source\Repos\TheDzejkob\RPG-WPF\RPG WPF\Json\enemyes.json";
         string prectenikroky;
         string prectenienemy;
+        bool boj = false;
 
         public Hra()
         {
@@ -43,10 +44,6 @@ namespace RPG_WPF
             prectenikroky = File.ReadAllText(filepathkroky);
             prectenienemy = File.ReadAllText(filepathenemy);
            
-        }
-        void takeDmg(int hp,int dmgTaken) 
-        {
-            hp = hp - dmgTaken;
         }
         
 
@@ -56,16 +53,11 @@ namespace RPG_WPF
             int r = random.Next(KrokList.Count);
             TextBoxx.Text = KrokList[r].Text;
         }
-
-        void fight()
+        void whilefight()
         {
-            List<Enemy> EnemyList = JsonSerializer.Deserialize<List<Enemy>>(prectenienemy);
-            int r = random.Next(EnemyList.Count);
-            enemy = EnemyList[r];
-            bool boj = true;
-            while (boj == true) 
-            {
-            TextBoxx.Text = "Začal jsi Bojovat s " + enemy.Name + enemy.Hp;
+
+            
+                TextBoxx.Text = "Začal jsi Bojovat s " + App.NowEnemy.Name + "" + App.NowEnemy.Hp;
                 
                 krokButton.Visibility = Visibility.Collapsed;
 
@@ -73,18 +65,43 @@ namespace RPG_WPF
                 heavyButton.Visibility = Visibility.Visible;
                 utekButton.Visibility = Visibility.Visible;
                 abilitaButton.Visibility = Visibility.Visible;
-                if (enemy.Hp >= 0) 
+                if (App.NowEnemy.Hp = 0) 
                 {
-                    boj = false;
+                    krokButton.Visibility = Visibility.Visible;
+
+                    utokButton.Visibility = Visibility.Collapsed;
+                    heavyButton.Visibility = Visibility.Collapsed;
+                    utekButton.Visibility = Visibility.Collapsed;
+                    abilitaButton.Visibility = Visibility.Collapsed;
+                    TextBoxx.Text = "Zabil jsi " + App.NowEnemy.Name;
+                    
                 }
                
-            }
-            // Your fight logic
+            
+        }
+
+        void fight()
+        {
+            List<Enemy> EnemyList = JsonSerializer.Deserialize<List<Enemy>>(prectenienemy);
+            int r = random.Next(EnemyList.Count);
+            App.NowEnemy = EnemyList[r];
+            bool boj = true;
+            whilefight();
+            
         }
 
         private void utokButton_Click(object sender, RoutedEventArgs e)
         {
-            takeDmg(enemy.Hp, App.Hrac.Dmg);
+            //App.NowEnemy.Hp = 0;
+            //TextBoxx.Text = "";
+
+
+
+            int NewEnHp = App.NowEnemy.Hp - App.Hrac.Dmg;
+            App.NowEnemy.Hp = NewEnHp;
+            TextBoxx.Text = "Bojuješ s  " + App.NowEnemy.Name + App.NowEnemy.Hp + "dik" + App.Hrac.Dmg;
+            whilefight();
+
         }
 
         void tezba()
@@ -102,12 +119,12 @@ namespace RPG_WPF
             else if (randomnumber < 0.95) // 15% šanca pač 0.7 + 0.2 kkt  na fight
             {
                 fight();
-                // Do something else
+                
             }
             else // 5% na tezbu
             {
                 
-                // Do something else
+               
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -115,5 +132,6 @@ namespace RPG_WPF
            funcPicker();
         }
 
+        
     }
 }

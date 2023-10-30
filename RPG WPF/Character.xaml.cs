@@ -22,8 +22,11 @@ namespace RPG_WPF
     /// </summary>
     public partial class Character : Window
     {
-        string jsonFilePath = @"C:\Users\PCnetz\Desktop\RPG WPF\RPG WPF\Json\Classy.json";
-        
+        string jsonFilePath = @"C:\Users\Lenovo\Source\Repos\TheDzejkob\RPG-WPF\RPG WPF\Json\Classy.json";
+
+
+
+
 
         public Character()
         {
@@ -33,6 +36,7 @@ namespace RPG_WPF
 
         // čte z Jsonu classy
         string jsonContent = File.ReadAllText(jsonFilePath);
+        
 
                 // prečita veci z jasonu a predelava je zpet na objekty
                 List<Classa> classaList = JsonSerializer.Deserialize<List<Classa>>(jsonContent);

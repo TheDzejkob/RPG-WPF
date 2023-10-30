@@ -14,6 +14,7 @@ namespace RPG_WPF
     public partial class App : Application
     {
         public static Player Hrac;
+        public static Enemy NowEnemy;
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -21,6 +22,7 @@ namespace RPG_WPF
 
             // Default´placeholdery (prozatimni nez se initializuje v character okně
             Hrac = new Player("Default", 100, 10, 0, null);
+            NowEnemy = new Enemy("Default", 1000, 1,null);
 
 
         }
