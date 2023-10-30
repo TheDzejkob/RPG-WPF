@@ -19,6 +19,9 @@
     <None Remove="Grafika\unlearn2.ttf" />
     <None Remove="Grafika\unlearne.ttf" />
     <None Remove="Grafika\VCR_OSD_MONO.ttf" />
+    <None Remove="Json\Classy.json" />
+    <None Remove="Json\enemyes.json" />
+    <None Remove="Json\kroky.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,6 +53,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Grafika\VCR_OSD_MONO.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\Classy.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\enemyes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\kroky.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

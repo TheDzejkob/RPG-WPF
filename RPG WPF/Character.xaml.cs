@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.IO;
+using System.Windows.Media.Animation;
 
 namespace RPG_WPF
 {
@@ -22,7 +23,9 @@ namespace RPG_WPF
     /// </summary>
     public partial class Character : Window
     {
-        string jsonFilePath = @"C:\Users\Lenovo\Source\Repos\TheDzejkob\RPG-WPF\RPG WPF\Json\Classy.json";
+        //make relative path to the Classy json
+        string jsonFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Json\Classy.json");
+        
 
 
 

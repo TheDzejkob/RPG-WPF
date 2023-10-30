@@ -32,8 +32,8 @@ namespace RPG_WPF
         Enemy enemy;
 
         private Random random = new Random();
-        string filepathkroky = @"C:\Users\Lenovo\Source\Repos\TheDzejkob\RPG-WPF\RPG WPF\Json\kroky.json";
-        string filepathenemy = @"C:\Users\Lenovo\Source\Repos\TheDzejkob\RPG-WPF\RPG WPF\Json\enemyes.json";
+        string filepathkroky = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Json\kroky.json");
+        string filepathenemy = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Json\enemyes.json");
         string prectenikroky;
         string prectenienemy;
         bool boj = false;
@@ -65,7 +65,7 @@ namespace RPG_WPF
                 heavyButton.Visibility = Visibility.Visible;
                 utekButton.Visibility = Visibility.Visible;
                 abilitaButton.Visibility = Visibility.Visible;
-                if (App.NowEnemy.Hp = 0) 
+                if (App.NowEnemy.Hp == 0) 
                 {
                     krokButton.Visibility = Visibility.Visible;
 
