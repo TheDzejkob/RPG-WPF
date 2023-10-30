@@ -153,7 +153,6 @@ namespace RPG_WPF
                 {
                     TextBoxx.Text = "Utekl jsi";
                     krokButton.Visibility = Visibility.Visible;
-
                     utokButton.Visibility = Visibility.Collapsed;
                     heavyButton.Visibility = Visibility.Collapsed;
                     utekButton.Visibility = Visibility.Collapsed;
