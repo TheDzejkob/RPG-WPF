@@ -5,28 +5,53 @@
     "Heal": 0
   },
   {
-    "Text": "Nsuper napinavej text",
+    "Text": "Super napinavej text",
     "Dmg": 0,
     "Heal": 0
   },
   {
-    "Text": "Devlog 1: prave jsou 2 rano v sobotu večer a ja misto toho abych byl venku s nekim tak delam tohle idk co je se mnou spatne",
+    "Text": "Prave jsou 2 rano v sobotu večer a ja misto toho abych byl venku s nekim tak delam tohle idk co je se mnou spatne",
     "Dmg": 0,
     "Heal": 0
   },
   {
-    "Text": "nejakej text co ja vim neumim vymislet texty a zaroven proc tohle pisu tak dlouhy? i¨dk aspon otestuju zda se text spravne wrapuje",
+    "Text": "nejakej text co ja vim neumim vymislet texty a zaroven proc tohle pisu tak dlouhy? idk aspon otestuju zda se text spravne wrapuje",
     "Dmg": 0,
     "Heal": 0
   },
   {
-    "Text": "našel jsi lektvar a bezmyšlenkovitě jsi se ho rozhodl vypít.Měl jsi štěstí a byl to heal poťák  Heal za 2",
+    "Text": "Našel jsi lektvar a bezmyšlenkovitě jsi se ho rozhodl vypít. Měl jsi štěstí a byl to heal poťák  Heal za 2",
     "Dmg": 0,
     "Heal": 2
   },
   {
-    "Text": "našel jsi lektvar a bezmyšlenkovitě jsi se ho rozhodl vypít.Měl jsi smůlu byl to jed   poškození za 1",
+    "Text": "Našel jsi lektvar a bezmyšlenkovitě jsi se ho rozhodl vypít. Měl jsi smůlu byl to jed   poškození za 1",
     "Dmg": 1,
+    "Heal": 0
+  },
+  {
+    "Text": "Něco se stalo ale nebyl jsi u toho lol",
+    "Dmg": 0,
+    "Heal": 0
+  },
+  {
+    "Text": "Šlápl jsi do bear trapy poškození za 1",
+    "Dmg": 1,
+    "Heal": 0
+  },
+  {
+    "Text": "Nejakej text 1",
+    "Dmg": 0,
+    "Heal": 0
+  },
+  {
+    "Text": "Nejakej text 2",
+    "Dmg": 0,
+    "Heal": 0
+  },
+  {
+    "Text": "Nejakej text 3",
+    "Dmg": 0,
     "Heal": 0
   }
 

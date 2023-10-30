@@ -116,16 +116,16 @@ namespace RPG_WPF
             
         }
 
-        private void utokButton_Click(object sender, RoutedEventArgs e)
+        private async void utokButton_Click(object sender, RoutedEventArgs e)
         {
             int NewEnHp = App.NowEnemy.Hp - App.Hrac.Dmg;
             App.NowEnemy.Hp = NewEnHp;
             TextBoxx.Text = "Použil jsi normální útok a udělil jsi " + App.Hrac.Dmg + " Dmg." + Environment.NewLine + "Nepřítely "+  App.NowEnemy.Name+ " zbývá " + App.NowEnemy.Hp + "  HP.";
-            whilefight();
-
+            await Task.Delay(1000);
+            enemyUtok();
         }
 
-        private void heavyButton_Click(object sender, RoutedEventArgs e)
+        private async void heavyButton_Click(object sender, RoutedEventArgs e)
         {
             if (heavyUsed == false)
             {
@@ -133,7 +133,8 @@ namespace RPG_WPF
             App.NowEnemy.Hp = NewEnHp;
             TextBoxx.Text = "Použil jsi těžký útok a udělil jsi " + App.Hrac.Dmg * 2 + " Dmg." + Environment.NewLine + "Nepřítely " + App.NowEnemy.Name + " zbývá " + App.NowEnemy.Hp + "  HP.";
             heavyUsed = true;
-            whilefight();
+            await Task.Delay(1000);
+            enemyUtok();
             }
             else
             {
@@ -142,7 +143,7 @@ namespace RPG_WPF
             }
         }
 
-        private void utekButton_Click(object sender, RoutedEventArgs e)
+        private async void utekButton_Click(object sender, RoutedEventArgs e)
         {
             if (utekUsed == false) 
             { 
@@ -161,7 +162,8 @@ namespace RPG_WPF
                 else
                 {
                     TextBoxx.Text = "Nepodařilo se ti utéct";
-                    whilefight();
+                    await Task.Delay(1000);
+                    enemyUtok();
                 }
             }
             else
@@ -169,6 +171,14 @@ namespace RPG_WPF
                 TextBoxx.Text = "Utek můžeš použít jen jednou za encaunter";
                 whilefight();
             }
+        }
+
+        void enemyUtok()
+        {
+            int NewHracHp = App.Hrac.Hp - App.NowEnemy.Dmg;
+            App.Hrac.Hp = NewHracHp;
+            TextBoxx.Text = "Nepřítel použil normální útok a udělil ti " + App.NowEnemy.Dmg + " Dmg." + Environment.NewLine + "A zbývá " + App.Hrac.Hp + "  HP.";
+            whilefight();
         }
 
         void tezba()
@@ -186,7 +196,6 @@ namespace RPG_WPF
             else if (randomnumber < 0.95) // 20% šanca pač 0.7 + 0.2 kkt  na fight
             {
                 fight();
-                
             }
             else // 5% na tezbu
             {
