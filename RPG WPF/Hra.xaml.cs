@@ -12,7 +12,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Text.Json;
 using System.Text.Json.Serialization;
 using RPG_WPF;
 using System.IO;
@@ -29,14 +28,12 @@ namespace RPG_WPF
     public partial class Hra : Window
     {
         GameManager gameManager = new GameManager(new List<Classa>());
-        Enemy enemy;
 
         private Random random = new Random();
         string filepathkroky = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Json\kroky.json");
         string filepathenemy = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Json\enemyes.json");
         string prectenikroky;
         string prectenienemy;
-        bool boj = false;
 
         public Hra()
         {
@@ -54,18 +51,14 @@ namespace RPG_WPF
             TextBoxx.Text = KrokList[r].Text;
         }
         void whilefight()
-        {
-
-            
-                TextBoxx.Text = "Začal jsi Bojovat s " + App.NowEnemy.Name + "" + App.NowEnemy.Hp;
-                
+        {       
                 krokButton.Visibility = Visibility.Collapsed;
 
                 utokButton.Visibility = Visibility.Visible;
                 heavyButton.Visibility = Visibility.Visible;
                 utekButton.Visibility = Visibility.Visible;
                 abilitaButton.Visibility = Visibility.Visible;
-                if (App.NowEnemy.Hp == 0) 
+                if (App.NowEnemy.Hp == 0 || App.NowEnemy.Hp < 0) 
                 {
                     krokButton.Visibility = Visibility.Visible;
 
@@ -85,7 +78,7 @@ namespace RPG_WPF
             List<Enemy> EnemyList = JsonSerializer.Deserialize<List<Enemy>>(prectenienemy);
             int r = random.Next(EnemyList.Count);
             App.NowEnemy = EnemyList[r];
-            bool boj = true;
+            TextBoxx.Text = "Začal jsi Bojovat s " + App.NowEnemy.Name;
             whilefight();
             
         }
@@ -99,7 +92,7 @@ namespace RPG_WPF
 
             int NewEnHp = App.NowEnemy.Hp - App.Hrac.Dmg;
             App.NowEnemy.Hp = NewEnHp;
-            TextBoxx.Text = "Bojuješ s  " + App.NowEnemy.Name + App.NowEnemy.Hp + "dik" + App.Hrac.Dmg;
+            TextBoxx.Text = "Použil jsi normální útok a udělil jsi " + App.Hrac.Dmg + " Dmg." + Environment.NewLine + "Nepřítely "+  App.NowEnemy.Name+ " zbývá" + App.NowEnemy.Hp + " HP.";
             whilefight();
 
         }
