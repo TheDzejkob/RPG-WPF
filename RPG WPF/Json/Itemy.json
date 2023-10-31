@@ -1,0 +1,21 @@
+[
+  {
+    "Id": 1,
+    "Name": "klacek",
+    "Description": "prostě klacek idk",
+    "Price": 10,
+    "Heal": 0,
+    "Dmg": 0,
+    "Minetable":true
+  },
+  {
+    "Id": 2,
+    "Name": "šutr",
+    "Description": "prostě šutr idk",
+    "Price": 10,
+    "Heal": 0,
+    "Dmg": 0,
+    "Minetable":true
+  }
+
+]

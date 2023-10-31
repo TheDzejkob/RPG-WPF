@@ -16,6 +16,7 @@ namespace RPG_WPF
         public static Player Hrac;
         public static Enemy NowEnemy;
         public static Krok NowKrok;
+        public static Item NowItem;
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -25,7 +26,7 @@ namespace RPG_WPF
             Hrac = new Player("Default", 100, 10, 0, null);
             NowEnemy = new Enemy("Default", 1000, 1,null);
             NowKrok = new Krok("Default", 0, 0);
-
+            NowItem = new Item(0,default,default,0,0,0,false);
         }
     }
 }

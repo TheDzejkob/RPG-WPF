@@ -32,8 +32,10 @@ namespace RPG_WPF
         private Random random = new Random();
         string filepathkroky = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Json\kroky.json");
         string filepathenemy = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Json\enemyes.json");
+        string filepathitemy= System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Json\Itemy.json");
         string prectenikroky;
         string prectenienemy;
+        string precteniitemy;
         bool heavyUsed = false;
         bool utekUsed = false;
 
@@ -42,7 +44,7 @@ namespace RPG_WPF
             InitializeComponent();
             prectenikroky = File.ReadAllText(filepathkroky);
             prectenienemy = File.ReadAllText(filepathenemy);
-           
+            precteniitemy = File.ReadAllText(filepathitemy);
         }
         
 
@@ -136,11 +138,12 @@ namespace RPG_WPF
             await Task.Delay(1000);
             enemyUtok();
             }
-            else
+            else if(heavyUsed == true)
             {
                 TextBoxx.Text = "Těžký útok můžeš použít jen jednou za encaunter";
                 whilefight();
             }
+            else { }
         }
 
         private async void utekButton_Click(object sender, RoutedEventArgs e)
@@ -148,7 +151,7 @@ namespace RPG_WPF
             if (utekUsed == false) 
             { 
                 utekUsed = true;
-                // make random with 20% chance to escape
+
                 double randomnumber = random.NextDouble();
                 if (randomnumber < 0.20)
                 {
@@ -183,6 +186,8 @@ namespace RPG_WPF
 
         void tezba()
         {
+           List <Item> items = JsonSerializer.Deserialize<List<Item>>(precteniitemy);
+           
             // Your tezba logic
         }
 

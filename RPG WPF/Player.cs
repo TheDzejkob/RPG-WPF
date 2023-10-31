@@ -13,8 +13,9 @@ namespace RPG_WPF
         public int Dmg { get; set; }
         public int Stepcounter { get; set; }
         public Classa PlayerClassa { get; set; }
+        public List<Item> Inventory { get; set; } = new List<Item>();
 
-        public Player(string name, int hp, int dmg, int stepcounter, Classa classa)
+        public Player(string name, int hp, int dmg, int stepcounter, Classa classa,)
         {
             Name = name;
             Hp = hp;
