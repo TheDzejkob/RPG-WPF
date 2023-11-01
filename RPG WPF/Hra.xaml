@@ -63,6 +63,11 @@
                 </Style>
             </Button.Resources>
         </Button>
-
+        <Canvas x:Name="debugOverlay" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Visibility="Collapsed">
+            <Rectangle  Width="800" Height="415" Fill="Red" Opacity="0.10"/>
+            <Label FontSize="16" HorizontalAlignment="Left" Canvas.Left="348" VerticalAlignment="Center">Debug Mode</Label>
+            <TextBox x:Name="debugCommandLine" Width="750" Height="30" Canvas.Left="25" Canvas.Top="340" Opacity="0.9"/>
+            <Button x:Name="ConfirmCommandButton" Width="160" Height="30" Canvas.Top="380" Canvas.Left="320" Opacity="0.9">Potvrdit</Button>
+        </Canvas>
     </Grid>
 </Window>

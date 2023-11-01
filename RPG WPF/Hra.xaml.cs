@@ -45,8 +45,21 @@ namespace RPG_WPF
             prectenikroky = File.ReadAllText(filepathkroky);
             prectenienemy = File.ReadAllText(filepathenemy);
             precteniitemy = File.ReadAllText(filepathitemy);
+            KeyDown += Window_KeyDown;
         }
-        
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the F1 key is down
+            if (e.Key == Key.F1)
+            {
+                debugOverlay.Visibility = Visibility.Visible;
+            }
+            if (e.Key == Key.Escape)
+            {
+                debugOverlay.Visibility = Visibility.Collapsed;
+            }
+        }
+
 
         public void kroky()
         {
