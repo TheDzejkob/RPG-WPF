@@ -22,7 +22,19 @@ namespace RPG_WPF
         public death()
         {
             InitializeComponent();
-            DeathLabel.Content = "Zemřeljsi " + App.Hrac.Name + " !" + Environment.NewLine + "S počtem kroků" + App.Hrac.Stepcounter;
+            DeathLabel.Content = "Zemřel jsi " + App.Hrac.Name + " !" + Environment.NewLine + "S počtem kroků " + App.Hrac.Stepcounter;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

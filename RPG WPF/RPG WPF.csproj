@@ -13,7 +13,10 @@
     <None Remove="Grafika\Adventure.ttf" />
     <None Remove="Grafika\data-latin.ttf" />
     <None Remove="Grafika\data-unifon.ttf" />
+    <None Remove="Grafika\image.png" />
+    <None Remove="Grafika\image1.png" />
     <None Remove="Grafika\KarmaFuture.ttf" />
+    <None Remove="Grafika\maynard-james-keenan-tool.gif" />
     <None Remove="Grafika\Nightmare Codehack.otf" />
     <None Remove="Grafika\Semi-Coder-Regular.otf" />
     <None Remove="Grafika\unlearn2.ttf" />
@@ -26,19 +29,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Grafika\Adventure Outline.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Grafika\Adventure.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Grafika\data-latin.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Grafika\data-unifon.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Grafika\image.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Grafika\image1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Grafika\KarmaFuture.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Grafika\maynard-james-keenan-tool.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Grafika\Nightmare Codehack.otf">
@@ -68,6 +74,10 @@
     <Content Include="Json\kroky.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="XamlAnimatedGif" Version="2.2.0" />
   </ItemGroup>
 
 </Project>
