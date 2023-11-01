@@ -12,6 +12,6 @@
             <RowDefinition Height="230*"/>
             <RowDefinition Height="70*"/>
         </Grid.RowDefinitions>
-        <Label x:Name="DeathLabel"></Label>
+        <Label x:Name="DeathLabel" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"></Label>
     </Grid>
 </Window>

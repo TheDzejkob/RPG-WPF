@@ -104,8 +104,20 @@ namespace RPG_WPF
                     TextBoxx.Text = "Zabil jsi " + App.NowEnemy.Name;
                     
                 }
+                if (App.Hrac.Hp == 0 || App.Hrac.Hp < 0)
+                {
+                    death();
+                }
                
             
+        }
+        void death()
+        {
+
+            death death = new death();
+            death.Show();
+            this.Close();
+
         }
 
         void fight()
