@@ -17,14 +17,15 @@ namespace RPG_WPF
         public static Enemy NowEnemy;
         public static Krok NowKrok;
         public static Item NowItem;
+        public static List<Item> inventory;
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
 
             // Default´placeholdery (prozatimni nez se initializuje v character okně
-            Hrac = new Player("Default", 100, 10, 0, null);
-            NowEnemy = new Enemy("Default", 1000, 1,null);
+            Hrac = new Player("Default", 100, 10, 0, null,null);
+            NowEnemy = new Enemy("Default", 1000, 1,null,null);
             NowKrok = new Krok("Default", 0, 0);
             NowItem = new Item(0,default,default,0,0,0,false);
         }

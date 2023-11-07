@@ -53,6 +53,7 @@ namespace RPG_WPF
             if (e.Key == Key.F1)
             {
                 debugOverlay.Visibility = Visibility.Visible;
+                debugLabel.Content = App.Hrac.Inventory;
             }
             if (e.Key == Key.Escape)
             {
@@ -66,6 +67,7 @@ namespace RPG_WPF
             List<Krok> KrokList = JsonSerializer.Deserialize<List<Krok>>(prectenikroky);
             int r = random.Next(KrokList.Count);
             App.NowKrok = KrokList[r];
+            App.Hrac.Stepcounter = +1; // přičte krok
 
             if (App.NowKrok.Heal > 0) 
             {
@@ -115,6 +117,7 @@ namespace RPG_WPF
                     utekButton.Visibility = Visibility.Collapsed;
                     abilitaButton.Visibility = Visibility.Collapsed;
                     TextBoxx.Text = "Zabil jsi " + App.NowEnemy.Name;
+                    App.Hrac.Inventory.Add(App.NowEnemy.DropItem);
                     
                 }
                 if (App.Hrac.Hp == 0 || App.Hrac.Hp < 0)
@@ -170,7 +173,11 @@ namespace RPG_WPF
             }
             else { }
         }
+        
+        //make new player object
 
+
+        
         private async void utekButton_Click(object sender, RoutedEventArgs e)
         {
             if (utekUsed == false) 

@@ -23,6 +23,7 @@ namespace RPG_WPF
     /// </summary>
     public partial class Character : Window
     {
+                public static List<Item> inventory;
         //make relative path to the Classy json
         string jsonFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Json\Classy.json");
         
@@ -67,8 +68,7 @@ namespace RPG_WPF
             {
                 Classa selectedClassa = listboxx.SelectedItem as Classa;
 
-
-                App.Hrac = new Player(menoTextBox.Text, selectedClassa.Basehp, selectedClassa.Basedmg, 0, selectedClassa);
+                App.Hrac = new Player(menoTextBox.Text, selectedClassa.Basehp, selectedClassa.Basedmg, 0, selectedClassa,inventory);
                 Hra hraWindow = new Hra();
                 hraWindow.Show();
                 Close();
