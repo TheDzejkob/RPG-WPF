@@ -53,7 +53,7 @@ namespace RPG_WPF
             if (e.Key == Key.F1)
             {
                 debugOverlay.Visibility = Visibility.Visible;
-                debugLabel.Content = App.Hrac.Inventory;
+                idk.Content = App.Hrac.Inventory[0].Name;
             }
             if (e.Key == Key.Escape)
             {
