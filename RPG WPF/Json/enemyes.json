@@ -4,13 +4,13 @@
     "Hp": 10,
     "Dmg": 3,
     "Description": "idk placeholder popisek 1",
-    "DropItem":  "klacek"
+    "ItemID": 1
   },
   {
     "Name": "test enemy 2",
     "Hp": 8,
     "Dmg": 2,
     "Description": "idk placeholder popisek 2",
-    "DropItem": "klacek"
+    "ItemID": 1
   }
 ]

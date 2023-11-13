@@ -22,7 +22,7 @@ namespace RPG_WPF
             Dmg = dmg;
             Stepcounter = stepcounter;
             PlayerClassa = classa;
-            Inventory = inventory;
+            Inventory = inventory ?? new List<Item>();
         }
     }
 }

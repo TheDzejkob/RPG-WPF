@@ -8,23 +8,23 @@ namespace RPG_WPF
 {
     public class Item
     {
-        public int Id;
-        public string Name;
-        public string Description;
-        public int Price;
-        public int Heal;
-        public int Dmg;
-        public bool Minetable;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int Price { get; set; }
+        public int Heal { get; set; }
+        public int Dmg { get; set; }
+        public bool Minetable { get; set; }
 
         public Item(int id, string name, string description, int price, int heal, int dmg, bool minetable)
         {
-            this.Id = id;
-            this.Name = name;
-            this.Description = description;
-            this.Price = price;
-            this.Heal = heal;
-            this.Dmg = dmg;
-            this.Minetable = minetable;
+            Id = id;
+            Name = name;
+            Description = description;
+            Price = price;
+            Heal = heal;
+            Dmg = dmg;
+            Minetable = minetable;
         }
     }
 }

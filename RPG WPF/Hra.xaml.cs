@@ -39,6 +39,7 @@ namespace RPG_WPF
         bool heavyUsed = false;
         bool utekUsed = false;
 
+
         public Hra()
         {
             InitializeComponent();
@@ -53,7 +54,6 @@ namespace RPG_WPF
             if (e.Key == Key.F1)
             {
                 debugOverlay.Visibility = Visibility.Visible;
-                idk.Content = App.Hrac.Inventory[0].Name;
             }
             if (e.Key == Key.Escape)
             {
@@ -116,10 +116,24 @@ namespace RPG_WPF
                     heavyButton.Visibility = Visibility.Collapsed;
                     utekButton.Visibility = Visibility.Collapsed;
                     abilitaButton.Visibility = Visibility.Collapsed;
-                    TextBoxx.Text = "Zabil jsi " + App.NowEnemy.Name;
-                    App.Hrac.Inventory.Add(App.NowEnemy.DropItem);
                     
+                    List<Item> items = JsonSerializer.Deserialize<List<Item>>(precteniitemy);
+                int index = App.NowEnemy.ItemID;
+                if (index >= 0 && index < items.Count)
+                {
+                    App.NowItem = items[index];
+                    App.Hrac.Inventory.Add(App.NowItem);
+                    TextBoxx.Text = "Zabil jsi " + App.NowEnemy.Name + " a získal jsi " + App.NowItem.Name;
                 }
+                else
+                {
+
+                    TextBoxx.Text = "Zabil jsi " + App.NowEnemy.Name;
+
+                }
+
+
+            }
                 if (App.Hrac.Hp == 0 || App.Hrac.Hp < 0)
                 {
                     death();

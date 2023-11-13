@@ -6,7 +6,7 @@
     "Price": 10,
     "Heal": 0,
     "Dmg": 0,
-    "Minetable":true
+    "Minetable": true
   },
   {
     "Id": 2,
@@ -15,7 +15,7 @@
     "Price": 10,
     "Heal": 0,
     "Dmg": 0,
-    "Minetable":true
+    "Minetable": true
   }
 
 ]
