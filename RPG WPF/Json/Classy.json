@@ -3,13 +3,13 @@
     "Name": "Bárbarian",
     "Description": "Barbar pohanského původu",
     "Basehp": 10,
-    "Basedmg": 3
+    "Basedmg": 4
   },
   {
     "Name": "Magič",
     "Description":  "Magus Vagus co ja vim",
     "Basehp": 10,
-    "Basedmg": 2
+    "Basedmg": 4
   },
   {
     "Name": "Arčr",
@@ -21,12 +21,12 @@
     "Name": "Pírát",
     "Description":"JARRRRR PLATINUM",
     "Basehp": 10,
-    "Basedmg": 2
+    "Basedmg": 4
   },
   {
     "Name": "Thíf",
     "Description": "prostě zloděj lol (cigoš)",
     "Basehp": 10,
-    "Basedmg": 2
+    "Basedmg": 4
   }
 ]
