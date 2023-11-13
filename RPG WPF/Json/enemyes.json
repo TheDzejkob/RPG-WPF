@@ -1,16 +1,30 @@
 [
   {
-    "Name": "test enemy 1",
+    "Name": "Medvěd",
     "Hp": 10,
     "Dmg": 3,
+    "Description": "idk placeholder popisek 1",
+    "ItemID": 3
+  },
+  {
+    "Name": "kamený golem",
+    "Hp": 12,
+    "Dmg": 2,
     "Description": "idk placeholder popisek 1",
     "ItemID": 1
   },
   {
-    "Name": "test enemy 2",
+    "Name": "Ent (živý strom)",
+    "Hp": 10,
+    "Dmg": 3,
+    "Description": "idk placeholder popisek 1",
+    "ItemID": 0
+  },
+  {
+    "Name": "Vlk",
     "Hp": 8,
     "Dmg": 2,
     "Description": "idk placeholder popisek 2",
-    "ItemID": 1
+    "ItemID": 2
   }
 ]

@@ -267,7 +267,7 @@ namespace RPG_WPF
             }
             else // 5% na tezbu
             {
-                
+                kroky();
                
             }
         }

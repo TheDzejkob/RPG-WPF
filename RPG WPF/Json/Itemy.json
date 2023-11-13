@@ -16,6 +16,25 @@
     "Heal": 0,
     "Dmg": 0,
     "Minetable": true
+  },
+  {
+    "Id": 2,
+    "Name": "vlčí kožešina",
+    "Description": "kožešina z vlaka",
+    "Price": 10,
+    "Heal": 0,
+    "Dmg": 0,
+    "Minetable": false
+  },
+  {
+    "Id": 3,
+    "Name": "Medvědí kožešina",
+    "Description": "Kožich medvěda kterého si zabyl",
+    "Price": 10,
+    "Heal": 0,
+    "Dmg": 0,
+    "Minetable": false
   }
+
 
 ]

@@ -53,6 +53,31 @@
     "Text": "Nejakej text 3",
     "Dmg": 0,
     "Heal": 0
+  },
+  {
+    "text": "při objevování bažiny jsi našel opuštěnou chatku ve které byl zvláštní lektvar a bezmyšlenkovitě jsi ho vypil    poškození za 2",
+    "Dmg": 2,
+    "Heal": 0
+  },
+  {
+    "text": "při objevování bažiny jsi našel opuštěnou chatku ve které byl zvláštní lektvar a bezmyšlenkovitě jsi ho vypil   heal za 2",
+    "Dmg": 0,
+    "Heal": 2
+  },
+  {
+    "text": "při prozkoumávání hor se udělala bouřka a promokl jsi",
+    "Dmg": 0,
+    "Heal": 0
+  },
+  {
+    "text": "stratil jsi se v lese a našel jsi léčivý pramen   heal za 2",
+    "Dmg": 0,
+    "Heal": 2
+  },
+  {
+    "text": "při prozkoumávání jsi našel zvlááštní bobule, rozhodl jsi se že je sníš    poškození za 1",
+    "Dmg": 1,
+    "Heal": 0
   }
 
 ]
