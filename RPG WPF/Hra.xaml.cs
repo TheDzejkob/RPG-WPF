@@ -43,6 +43,8 @@ namespace RPG_WPF
         public Hra()
         {
             InitializeComponent();
+            invListBox.ItemsSource = App.Hrac.Inventory;
+            invListBox.DisplayMemberPath = "Name";
             prectenikroky = File.ReadAllText(filepathkroky);
             prectenienemy = File.ReadAllText(filepathenemy);
             precteniitemy = File.ReadAllText(filepathitemy);
@@ -67,7 +69,8 @@ namespace RPG_WPF
             List<Krok> KrokList = JsonSerializer.Deserialize<List<Krok>>(prectenikroky);
             int r = random.Next(KrokList.Count);
             App.NowKrok = KrokList[r];
-            App.Hrac.Stepcounter = +1; // přičte krok
+            int a = 1;
+            App.Hrac.Stepcounter = App.Hrac.Stepcounter + a; // přičte krok
 
             if (App.NowKrok.Heal > 0) 
             {
@@ -124,6 +127,9 @@ namespace RPG_WPF
                     App.NowItem = items[index];
                     App.Hrac.Inventory.Add(App.NowItem);
                     TextBoxx.Text = "Zabil jsi " + App.NowEnemy.Name + " a získal jsi " + App.NowItem.Name;
+                    int a = 1;
+                    App.Hrac.Stepcounter = App.Hrac.Stepcounter + a;
+                    invListBox.Items.Refresh();
                 }
                 else
                 {
@@ -240,11 +246,11 @@ namespace RPG_WPF
         void funcPicker()
         {
             double randomnumber = random.NextDouble();
-            if (randomnumber < 0.75) // 75% šanca  na krok
+            if (randomnumber < 0.80) // 80% šanca  na krok
             {
                 kroky();
             }
-            else if (randomnumber < 0.95) // 20% šanca pač 0.7 + 0.2 kkt  na fight
+            else if (randomnumber < 0.95) // 15% šanca pač 0.7 + 0.2 kkt  na fight
             {
                 fight();
             }
@@ -259,6 +265,9 @@ namespace RPG_WPF
            funcPicker();
         }
 
-        
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

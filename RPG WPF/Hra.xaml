@@ -27,11 +27,11 @@
                 </Style>
             </Button.Resources>
         </Button>
-        
-        
-        
-        
-        
+
+
+
+
+
         <Button x:Name="utokButton" Grid.Column="1" Grid.Row="1" Margin="20,35,280,5" Background="#2D3142" Foreground="White" Content="základní útok" Visibility="Collapsed" Click="utokButton_Click">
             <Button.Resources>
                 <Style TargetType="Border">
@@ -41,11 +41,11 @@
         </Button>
 
         <Button x:Name="heavyButton" Grid.Column="1" Grid.Row="1" Margin="280,35,20,5" Background="#2D3142" Foreground="White" Content="Heavy útok" Visibility="Collapsed" Click="heavyButton_Click">
-        <Button.Resources>
-            <Style TargetType="Border">
-                <Setter Property="CornerRadius" Value="15"></Setter>
-            </Style>
-        </Button.Resources>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+            </Button.Resources>
         </Button>
 
         <Button x:Name="utekButton" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Margin="40,295,260,80" Background="#2D3142" Foreground="White" Content="Pokusit se o útěk" Visibility="Collapsed" Click="utekButton_Click">
@@ -69,5 +69,13 @@
             <TextBox x:Name="debugCommandLine" Width="750" Height="30" Canvas.Left="25" Canvas.Top="340" Opacity="0.9"/>
             <Button x:Name="ConfirmCommandButton" Width="160" Height="30" Canvas.Top="380" Canvas.Left="320" Opacity="0.9">Potvrdit</Button>
         </Canvas>
+        <Label HorizontalContentAlignment="Center">Inventář</Label>
+        <ListBox x:Name="invListBox" Background="#D8D5DB" Margin="10,20,5,5" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+            </ListBox.Resources>
+        </ListBox>
     </Grid>
 </Window>
