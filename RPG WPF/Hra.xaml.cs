@@ -18,6 +18,7 @@ using System.IO;
 using System.Net.Http.Json;
 using System.Windows.Markup;
 using System.Xml;
+using System.Text.RegularExpressions;
 
 namespace RPG_WPF
 {
@@ -43,8 +44,19 @@ namespace RPG_WPF
         public Hra()
         {
             InitializeComponent();
+            List<Item> Craftableitems = new List<Item>();
+            Craftableitems.Add(new Item(0,"Kamená sekyra", "kamená sekyra kterou jsi vyrobyl", 0, 0, 5, false));
+
+            CraftingListBox.ItemsSource = Craftableitems;
+            CraftingListBox.DisplayMemberPath = "Name";
+
             invListBox.ItemsSource = App.Hrac.Inventory;
             invListBox.DisplayMemberPath = "Name";
+
+            inspectorLabel.Text = "Jméno: " + Environment.NewLine +
+                                     "Popisek: " + Environment.NewLine + 
+                                     "Heal: " + Environment.NewLine + 
+                                     "Dmg: ";
             prectenikroky = File.ReadAllText(filepathkroky);
             prectenienemy = File.ReadAllText(filepathenemy);
             precteniitemy = File.ReadAllText(filepathitemy);
@@ -52,7 +64,7 @@ namespace RPG_WPF
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            // Check if the F1 key is down
+
             if (e.Key == Key.F1)
             {
                 debugOverlay.Visibility = Visibility.Visible;
@@ -193,8 +205,7 @@ namespace RPG_WPF
             }
             else { }
         }
-        
-        //make new player object
+
 
 
         
@@ -240,7 +251,7 @@ namespace RPG_WPF
         {
            List <Item> items = JsonSerializer.Deserialize<List<Item>>(precteniitemy);
            
-            // Your tezba logic
+
         }
 
         void funcPicker()
@@ -267,7 +278,105 @@ namespace RPG_WPF
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (invListBox.SelectedItem is Item selectedItem)
+            {
 
+                inspectorLabel.Text = "Jméno: " + selectedItem.Name + Environment.NewLine +
+                                        "Popisek: " + selectedItem.Description + Environment.NewLine +
+                                        "Heal: " + selectedItem.Heal + Environment.NewLine +
+                                        "Dmg: " + selectedItem.Dmg;
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            App.Hrac.Inventory.Remove(invListBox.SelectedItem as Item);
+            invListBox.Items.Refresh();
+            inspectorLabel.Text = "Jméno: " + Environment.NewLine +
+                                     "Popisek: " + Environment.NewLine +
+                                     "Heal: " + Environment.NewLine +
+                                     "Dmg: ";
+
+        }
+        private void ProcessDebugCommand(string command)
+        {
+            
+            if (command.StartsWith("give "))
+            {
+               
+                string[] parts = command.Split(' ');
+                if (parts.Length == 2 && int.TryParse(parts[1], out int itemId))
+                {
+                    
+                    List<Item> items = JsonSerializer.Deserialize<List<Item>>(precteniitemy);
+                    Item itemToAdd = items.FirstOrDefault(item => item.Id == itemId);
+
+                    
+                    if (itemToAdd != null)
+                    {
+                        App.Hrac.Inventory.Add(itemToAdd);
+                        invListBox.Items.Refresh();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Item s ID {itemId} nebyl nalezen.");
+                    }
+                }
+                else
+                {
+                   
+                }
+            }
+            else if (command.StartsWith("clearinv"))
+            {
+                App.Hrac.Inventory.Clear();
+                invListBox.Items.Refresh();
+            }
+            else
+            {
+                Console.WriteLine("neznámý command");
+            }
+        }
+
+        private void ConfirmCommandButton_Click(object sender, RoutedEventArgs e)
+        {
+            string command = debugCommandLine.Text.Trim();
+            ProcessDebugCommand(command);
+        }
+
+        private async void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if(CraftingListBox.SelectedItem is Item selectedItem)
+            {
+                if (selectedItem.Name == "Kamená sekyra")
+                {
+                    Item hledanyItem = new Item(1, "šutr", "prostě šutr idk", 10, 0, 0, true);
+                    Item hledanyItem2 = new Item(0, "klacek", "prostě klacek idk", 10, 0, 0, true);
+                    if (App.Hrac.Inventory.Contains(hledanyItem) && App.Hrac.Inventory.Contains(hledanyItem2))
+                    {
+                        App.Hrac.Inventory.Remove(hledanyItem);
+                        App.Hrac.Inventory.Remove(hledanyItem2);
+                        App.Hrac.Inventory.Add(new Item(0, "kamená sekyra", "kamená sekyra kterou jsi vyrobyl", 0, 0, 5, false));
+                        invListBox.Items.Refresh();
+                        await Task.Delay(800);
+                        TextBoxx.Text = "Vyrobyl jsi kamenou sekyru a přidala se ti do inventáře tvůj dmg se zvětšil o 5";
+                        int a = App.Hrac.Dmg;
+                        App.Hrac.Dmg = a + 5;
+                    }
+                   
+                    else
+                    {
+                        TextBoxx.Text = "Nemáš dostatek surovin";
+                        await Task.Delay(800);
+                        TextBoxx.Text = "";
+                        return;
+                    }
+                   
+                }
+            }
+           
+
+            
         }
     }
 }

@@ -63,12 +63,6 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Canvas x:Name="debugOverlay" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Visibility="Collapsed">
-            <Rectangle  Width="800" Height="415" Fill="Red" Opacity="0.10"/>
-            <Label x:Name="debugLabel" FontSize="16" HorizontalAlignment="Left" Canvas.Left="348" VerticalAlignment="Center">Debug Mode</Label>
-            <TextBox x:Name="debugCommandLine" Width="750" Height="30" Canvas.Left="25" Canvas.Top="340" Opacity="0.9"/>
-            <Button x:Name="ConfirmCommandButton" Width="160" Height="30" Canvas.Top="380" Canvas.Left="320" Opacity="0.9">Potvrdit</Button>
-        </Canvas>
         <Label HorizontalContentAlignment="Center">Inventář</Label>
         <ListBox x:Name="invListBox" Background="#D8D5DB" Margin="10,20,5,5" SelectionChanged="ListBox_SelectionChanged">
             <ListBox.Resources>
@@ -77,5 +71,50 @@
                 </Style>
             </ListBox.Resources>
         </ListBox>
+        
+        <Button Grid.Row="1" Background="#2D3142" Foreground="White" Margin="10,5,5,60" Content="Vyhodit předmět" Click="Button_Click_1">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        <Label Grid.Column="3" HorizontalContentAlignment="Center">Inspector</Label>
+        <Border Background="#D8D5DB" Grid.Column="2" Margin="5,21,10,180">
+            <Border.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+            </Border.Resources>
+
+            <TextBlock x:Name="inspectorLabel" FontSize="11" Margin="5" TextWrapping="Wrap" />
+        </Border>
+
+        
+        <Label Grid.Column="3" HorizontalContentAlignment="Center" Margin="10,165,10,10">Crafting</Label>
+        <ListBox x:Name="CraftingListBox" Grid.Column="2" Margin="5,186,10,5"  Background="#D8D5DB">
+            <ListBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+            </ListBox.Resources>
+        </ListBox>
+
+        <Button Grid.Row="1" Grid.Column="2" Background="#2D3142" Foreground="White" Margin="5,5,10,60" Content="Vyrobit předmět" Click="Button_Click_2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <Canvas x:Name="debugOverlay" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Visibility="Collapsed">
+            <Rectangle  Width="800" Height="415" Fill="Red" Opacity="0.10"/>
+            <Label x:Name="debugLabel" FontSize="16" HorizontalAlignment="Left" Canvas.Left="348" VerticalAlignment="Center">Debug Mode</Label>
+            <TextBox x:Name="debugCommandLine" Width="750" Height="30" Canvas.Left="25" Canvas.Top="340" Opacity="0.9"/>
+            <Button x:Name="ConfirmCommandButton" Width="160" Height="30" Canvas.Top="380" Canvas.Left="320" Opacity="0.9" Click="ConfirmCommandButton_Click">Potvrdit</Button>
+        </Canvas>
     </Grid>
 </Window>

@@ -1,6 +1,6 @@
 [
   {
-    "Id": 1,
+    "Id": 0,
     "Name": "klacek",
     "Description": "prostě klacek idk",
     "Price": 10,
@@ -9,7 +9,7 @@
     "Minetable": true
   },
   {
-    "Id": 2,
+    "Id": 1,
     "Name": "šutr",
     "Description": "prostě šutr idk",
     "Price": 10,
